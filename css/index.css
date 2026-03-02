@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+html {
+    background-color: #000000;
+}
+
+body {
+    background-color: #ffffff;
+    height: 120vh;
+}
+
+/* CSS do Cabeçalho */
+header {
+    background-color: #000000;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+header button {
+    font-size: 2.5rem;
+    padding: 0 10px;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+}
+
+header h1 {
+    color: #ffffff;
+    font-family: "Oswald", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+header h1::before{
+    content: "JCP";
+}
+
+#header_logo {
+    height: 60px;
+}
+
+/*CSS do Menu*/
+nav {
+    margin-top: 80px;
+    font-size: 20px;
+}
+
+@media (min-width: 768px) {
+    header h1::before{
+        content: "Jornal CP"
+    }
+}
+
+@media (min-width: 1024px) {
+    header h1::before{
+        content: "JCP - Jornal Colégio Professores"
+    }
+}
