@@ -1,17 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+:root {
+    --bg-body: #fdfcf0;
+    --bg-header: #000000;
+    --bg-nav: #f5f2f0;
+    --text-color: #242424;
+}
 
 html {
-    background-color: #000000;
+    background-color: var(--bg-header);
 }
 
 body {
-    background-color: #ffffff;
-    height: 120vh;
+    background-color: var(--bg-body);
+    height: 200vh;
 }
 
 /* CSS do Cabeçalho */
 header {
-    background-color: #000000;
+    background-color: var(--bg-header);
     display: flex;
     justify-content: space-between;
     position: fixed;
@@ -23,13 +28,18 @@ header {
 header button {
     font-size: 2.5rem;
     padding: 0 10px;
-    background-color: #000000;
-    color: #ffffff;
+    background-color: var(--bg-header);
+    color: var(--bg-body);
     border: none;
 }
 
+header button:active {
+    transform: scale(0.9);
+    transition: 0.1s;
+}
+
 header h1 {
-    color: #ffffff;
+    color: var(--bg-body);
     font-family: "Oswald", sans-serif;
     font-size: 2.5rem;
     font-weight: 700;
@@ -45,8 +55,68 @@ header h1::before{
 
 /*CSS do Menu*/
 nav {
-    margin-top: 80px;
-    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-nav);
+    color: var(--text-color);
+    position: fixed;
+    height: 100vh;
+    top: 60px;
+    width: 180px;
+    border-right: 1px solid rgba(0,0,0,0.05);
+    z-index: 999;
+    left: -180px;
+    transition: left 0.3 ease;
+}
+
+nav.open {
+    left: 0;
+}
+
+#side_items {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+    gap: 5px;
+    list-style: none;
+    margin: 0;
+}
+
+.side_item {
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.side_item a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    text-decoration: none;
+    color:var(--text-color);
+    font-size: 1rem;
+    border-radius: 30px;
+    width: 95%;
+    transition: 0.2s;
+}
+
+.side_item a:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: var(--bg-header);
+}
+
+.side_item.active a{
+    background-color: var(--text-color);
+    color: var(--bg-nav);
+    font-weight: 600;
+}
+
+.side_item i {
+    font-size: 1.2rem;
+    width: 24px;
+    text-align: center;
 }
 
 @media (min-width: 768px) {
