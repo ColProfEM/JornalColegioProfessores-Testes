@@ -23,6 +23,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
+    z-index: 998;
 }
 
 header button {
@@ -117,6 +118,47 @@ nav.open {
     font-size: 1.2rem;
     width: 24px;
     text-align: center;
+}
+
+/*CSS do Conteúdo Principal*/
+main {
+    background-color: var(--bg-body);
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+    align-items: center;
+}
+
+.container {
+    width: 90vw;
+    max-width: 500px;
+    aspect-ratio: 4/5;
+    background-color: #fff;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.news-bg {
+    object-fit: cover;
+    z-index: 1;
+}
+
+.news-cover {
+    z-index: 2;
+    width: 90%;
+    background-color: #c9430acc;
+    color: white;
+    position: absolute;
+    bottom: 30px;
+    border-radius:0 5px 5px 0;
+    padding-left: 5px;
+    line-height: 1.5;
 }
 
 @media (min-width: 768px) {
